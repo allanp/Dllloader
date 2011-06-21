@@ -1,0 +1,5 @@
+D:\Tianhua\Codes\Dllloader\ComplexNumberCalc\bin\Debug\ComplexNumberCalc.dll
+D:\Tianhua\Codes\Dllloader\ComplexNumberCalc\bin\Debug\ComplexNumberCalc.pdb
+D:\Tianhua\Codes\Dllloader\ComplexNumberCalc\obj\Debug\ResolveAssemblyReference.cache
+D:\Tianhua\Codes\Dllloader\ComplexNumberCalc\obj\Debug\ComplexNumberCalc.dll
+D:\Tianhua\Codes\Dllloader\ComplexNumberCalc\obj\Debug\ComplexNumberCalc.pdb
