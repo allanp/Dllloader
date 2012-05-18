@@ -65,7 +65,7 @@ namespace Dllloader
 
             Console.WriteLine("Target Method Name: {0}", targetMethodName);
 
-            pluginDir = @"D:\Tianhua\Codes\Dllloader\ComplexNumberCalc\bin\Debug";
+            pluginDir = @"D:\XXXXX\Codes\Dllloader\ComplexNumberCalc\bin\Debug";
 
             Console.WriteLine("Searching Dll files from: {0}", pluginDir);
 
