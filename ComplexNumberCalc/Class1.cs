@@ -7,13 +7,29 @@ namespace ComplexNumberCalc
 {
     public class ComplexNumber : ICloneable
     {
-        internal int real;
-        internal int imaginary;
+        internal int _real;
+        internal int _imaginary;
 
         public ComplexNumber(int real, int imaginary)
         {
-            this.real = real;
-            this.imaginary = imaginary;
+            this._real = real;
+            this._imaginary = imaginary;
+        }
+
+        public int Real
+        {
+            get
+            {
+                return _real;
+            }
+        }
+
+        public int Imaginary
+        {
+            get
+            {
+                return _imaginary;
+            }
         }
 
         public override bool Equals(object obj)
@@ -21,49 +37,58 @@ namespace ComplexNumberCalc
             if (obj == null)
                 return false;
 
-            return ((ComplexNumber)obj).real == real &&
-                ((ComplexNumber)obj).imaginary == imaginary;
+            if (Object.ReferenceEquals(obj, this))
+                return true;
+
+            ComplexNumber other = obj as ComplexNumber;
+
+            return other != null && other._real == _real && other._imaginary == _imaginary;
         }
         
         public override int GetHashCode()
         {
-            return real ^ imaginary;
+            return _real ^ _imaginary;
         }
 
         public override string ToString()
         {
-            if( imaginary >= 0)
-                return string.Format("{0} + {1}i", real, imaginary);
-            else
-                return string.Format("{0} - {1}i", real, Math.Abs(imaginary));
+            return string.Format("{0} {1} {2}i", _real, _imaginary >= 0 ? "+" : "-", Math.Abs(_imaginary));
         }
 
         object ICloneable.Clone()
         {
-            return new ComplexNumber(this.real, this.imaginary);
-        }
-    }
-
-    public class ComplexNumberCalc
-    {
-        public static ComplexNumber Plus(ComplexNumber cn1, ComplexNumber cn2)
-        {
-            return new ComplexNumber(cn1.real + cn2.real, cn1.imaginary + cn2.imaginary);
+            return new ComplexNumber(this._real, this._imaginary);
         }
 
-        public static ComplexNumber Minus(ComplexNumber cn1, ComplexNumber cn2)
+        public static bool operator ==(ComplexNumber cn1, ComplexNumber cn2)
         {
-            return new ComplexNumber(cn1.real - cn2.real, cn1.imaginary - cn2.imaginary);
+            if (Object.ReferenceEquals(cn1, null) && Object.ReferenceEquals(cn2, null))
+                return false;
+            if (!Object.ReferenceEquals(cn1, null) && Object.ReferenceEquals(cn2, null))
+                return false;
+            if (Object.ReferenceEquals(cn1, null) && !Object.ReferenceEquals(cn2, null))
+                return false;
+            return cn1.Equals(cn2);
         }
-
-        public static ComplexNumber Multiply(ComplexNumber cn, int factor)
+        public static bool operator !=(ComplexNumber cn1, ComplexNumber cn2)
         {
-            return new ComplexNumber(cn.real * factor, cn.imaginary * factor);
+            return !(cn1 == cn2);
         }
-
-        public static ComplexNumber Divide(ComplexNumber cn, int factor)
+        public static ComplexNumber operator +(ComplexNumber cn1, ComplexNumber cn2)
         {
-            return new ComplexNumber(cn.real / factor, cn.imaginary / factor);
+            return new ComplexNumber(cn1._real + cn2._real, cn1._imaginary + cn2._imaginary);
+        }
+        public static ComplexNumber operator -(ComplexNumber cn1, ComplexNumber cn2)
+        {
+            return new ComplexNumber(cn1._real - cn2._real, cn1._imaginary - cn2._imaginary);
+        }
+        public static ComplexNumber operator *(ComplexNumber cn, int factor)
+        {
+            return new ComplexNumber(cn._real * factor, cn._imaginary * factor);
+        }
+        public static ComplexNumber operator /(ComplexNumber cn, int factor)
+        {
+            return new ComplexNumber(cn._real / factor, cn._imaginary / factor);
         }
     }
 }
