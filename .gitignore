@@ -1,0 +1,6 @@
+*.testsettings
+*.vsmdi
+[O|o]bj
+[D|d]ebug
+[R|r]elease
+[T|t]est[R|r]esults
