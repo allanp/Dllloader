@@ -1,5 +1,0 @@
-D:\Tianhua\Codes\Dllloader\Dllloader\bin\Debug\Dllloader.exe
-D:\Tianhua\Codes\Dllloader\Dllloader\bin\Debug\Dllloader.pdb
-D:\Tianhua\Codes\Dllloader\Dllloader\obj\x86\Debug\ResolveAssemblyReference.cache
-D:\Tianhua\Codes\Dllloader\Dllloader\obj\x86\Debug\Dllloader.exe
-D:\Tianhua\Codes\Dllloader\Dllloader\obj\x86\Debug\Dllloader.pdb
